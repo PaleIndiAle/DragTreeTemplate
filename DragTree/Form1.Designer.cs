@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.row1col1 = new System.Windows.Forms.Label();
             this.row1col2 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.resetButton = new System.Windows.Forms.Button();
             this.reactionLabel = new System.Windows.Forms.Label();
+            this.lightTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // row1col1
@@ -119,7 +121,7 @@
             // startButton
             // 
             this.startButton.Location = new System.Drawing.Point(176, 155);
-            this.startButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startButton.Margin = new System.Windows.Forms.Padding(2);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(63, 32);
             this.startButton.TabIndex = 8;
@@ -130,7 +132,7 @@
             // goButton
             // 
             this.goButton.Location = new System.Drawing.Point(176, 205);
-            this.goButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.goButton.Margin = new System.Windows.Forms.Padding(2);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(63, 32);
             this.goButton.TabIndex = 9;
@@ -141,19 +143,19 @@
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeLabel.ForeColor = System.Drawing.Color.White;
             this.timeLabel.Location = new System.Drawing.Point(173, 58);
             this.timeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(58, 17);
+            this.timeLabel.Size = new System.Drawing.Size(49, 20);
             this.timeLabel.TabIndex = 10;
             this.timeLabel.Text = "0.000";
             // 
             // resetButton
             // 
             this.resetButton.Location = new System.Drawing.Point(176, 106);
-            this.resetButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(2);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(63, 32);
             this.resetButton.TabIndex = 11;
@@ -164,14 +166,19 @@
             // reactionLabel
             // 
             this.reactionLabel.AutoSize = true;
-            this.reactionLabel.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reactionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reactionLabel.ForeColor = System.Drawing.Color.White;
             this.reactionLabel.Location = new System.Drawing.Point(173, 32);
             this.reactionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.reactionLabel.Name = "reactionLabel";
-            this.reactionLabel.Size = new System.Drawing.Size(98, 17);
+            this.reactionLabel.Size = new System.Drawing.Size(77, 20);
             this.reactionLabel.TabIndex = 12;
             this.reactionLabel.Text = "Reaction:";
+            // 
+            // lightTimer
+            // 
+            this.lightTimer.Interval = 400;
+            this.lightTimer.Tick += new System.EventHandler(this.lightTimer_Tick);
             // 
             // Form1
             // 
@@ -193,7 +200,7 @@
             this.Controls.Add(this.row1col2);
             this.Controls.Add(this.row1col1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Racing Tree";
@@ -217,6 +224,7 @@
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Label reactionLabel;
+        private System.Windows.Forms.Timer lightTimer;
     }
 }
 
